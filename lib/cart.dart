@@ -16,7 +16,7 @@ class cart extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('My Cart',style: GoogleFonts.nunito(textStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.white)),),
+          Text('My Cart',style: GoogleFonts.nunito(textStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 25)),),
 
           SizedBox(height: 10,),
 

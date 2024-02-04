@@ -1,9 +1,27 @@
+import 'dart:async';
+
 import 'package:first_app/home.dart';
+import 'package:first_app/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class intro extends StatelessWidget {
+class intro extends StatefulWidget {
   const intro({super.key});
+
+  @override
+  State<intro> createState() => _introState();
+}
+
+class _introState extends State<intro> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => login(),));
+    });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +59,7 @@ class intro extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SizedBox(height: 80,),
+                    SizedBox(height: 150,),
                   ],
                 ),
                 Row(
@@ -57,7 +75,7 @@ class intro extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SizedBox(height: 15,),
+                    SizedBox(height: 40,),
                   ],
                 ),
                 Row(
@@ -76,30 +94,30 @@ class intro extends StatelessWidget {
                     SizedBox(height: 130,),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => home(),));
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(44, 110, 73, 1),
-                        borderRadius: BorderRadius.circular(20)
-                      ),
-                      child: Center(
-                        child: Text('Get Started!!!',
-                          style: GoogleFonts.nunito(textStyle: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500
-                          )),
-                        ),
-                      ),
-                    ),
-                  ),
-                )
+                // Padding(
+                //   padding: const EdgeInsets.all(10),
+                //   child: GestureDetector(
+                //     onTap: () {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context) => home(),));
+                //     },
+                //     child: Container(
+                //       padding: EdgeInsets.all(15),
+                //       decoration: BoxDecoration(
+                //         color: Color.fromRGBO(44, 110, 73, 1),
+                //         borderRadius: BorderRadius.circular(20)
+                //       ),
+                //       child: Center(
+                //         child: Text('Get Started!!!',
+                //           style: GoogleFonts.nunito(textStyle: TextStyle(
+                //             fontSize: 17,
+                //             color: Colors.white,
+                //             fontWeight: FontWeight.w500
+                //           )),
+                //         ),
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           )
